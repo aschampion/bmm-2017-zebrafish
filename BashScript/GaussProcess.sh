@@ -12,7 +12,7 @@
 #SBATCH --mail-user=ehoseini@mit.edu
 
 module add mit/matlab/2016b
-matlab -nodisplay -signelCompThread -r "addpath(genpath('/home/ehoseini/MyCodes//')); \
+matlab -nodisplay -signelCompThread -r "addpath(genpath('/home/ehoseini/MyCodes/')); \
 addpath(genpath('/home/ehoseini/MyCodes/MatlabTools/'));\
 data_folder='/om/user/ehoseini/MyData/[2017]BMMcourse/yumu_20160531_singleplane_83.5Hz_mika_processing/plane9';\
 cd(data_folder);\
