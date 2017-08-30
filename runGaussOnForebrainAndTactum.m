@@ -17,4 +17,5 @@ disp('forebrain done!')
 TactumGaussProcess=GaussProcessFreq(tectumAct,1/tSample);
 disp('Tactum done!')
 % 
-save('GaussData','ForebrainGausProcess','TactumGaussProcess','-v7.3');
+save('ForebrainGaus','ForebrainGausProcess','-v7.3');
+save('TactumGaus','TactumGaussProcess','-v7.3');
