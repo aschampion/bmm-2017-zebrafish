@@ -1,8 +1,8 @@
 #!/bin/sh
 
 #  GaussProcess.sh
-#SBATCH --output=GaussProcess.out
-#SBATCH --job-name=GaussProcess
+#SBATCH --output=splitMfile.out
+#SBATCH --job-name=splitMfile
 #SBATCH -t 12:00:00
 #SBATCH --ntask=1
 #SBATCH -c 5

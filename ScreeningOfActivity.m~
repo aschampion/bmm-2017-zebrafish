@@ -204,7 +204,7 @@ set(gca,'xticklabel',num2str(floor(timeInd(floor(linspace(1,length(timeInd),10))
 %% 
 tSample= 1/83.5; %(seconds);
 freqMat=[];EnergyMat=[];
-forebrainAct=forbrainAct-mean(forbrainAct,2)*ones(1,size(forbrainAct,2));
+forebrainAct=
 for i=1:size(forbrainAct,1)
     temp=forbrainAct(i,:);
     [freq,mag,power]=computeFFT(temp,tSample,'NoShowPlot');
@@ -216,10 +216,8 @@ figure;
 subplot(2,1,1)
 plot(mean(freqMat,1),mean(10*log10(EnergyMat),1),'-k')
 xlabel('Freq');ylabel('Power(db)');grid on;title('Forebrain')
-ylim([-100,-75]);xlim([-20,20]);
 % 
 freqMat=[];EnergyMat=[];
-ForebrainGausEstim=ForebrainGausEstim-mean(ForebrainGausEstim,2)*ones(1,size(ForebrainGausEstim,2));
 for i=1:size(ForebrainGausEstim,1)
     temp=ForebrainGausEstim(i,:);
     [freq,mag,power]=computeFFT(temp,tSample,'NoShowPlot');
@@ -231,6 +229,5 @@ end
 subplot(2,1,2)
 plot(mean(freqMat,1),mean(10*log10(EnergyMat),1),'-k')
 xlabel('Freq');ylabel('Power(db)');grid on;title('Forebrain')
-ylim([-100,-75]);xlim([-20,20])
 
 
