@@ -16,5 +16,5 @@ matlab -nodisplay -signelCompThread -r "addpath(genpath('/home/ehoseini/MyCodes/
 addpath(genpath('/home/ehoseini/MyCodes/MatlabTools/'));\
 data_folder='/om/user/ehoseini/MyData/[2017]BMMcourse/yumu_20160531_singleplane_83.5Hz_mika_processing/plane9';\
 cd(data_folder);\
-runGaussOnForebrainAndTactum;\
+runGaussOnForebrainAndTactum_v2;\
 quit;"
