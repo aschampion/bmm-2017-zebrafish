@@ -192,7 +192,7 @@ forbrainAct=cellAct(forbrainInd,6e3:end);
 tectumAct=cellAct(tactumInd,6e3:end);
 timeInd=[0:size(tectumAct,2)]*tSample;
 cd(['/Users/eghbalhosseiniasl1/Dropbox (MIT)/MyData/[2017]BMMcourse/yumu_20160531_singleplane_83.5Hz_mika_processing/plane9/GaussProcess'])
-load('ForebrainGaus_v2.mat')
+load('ForebrainGaus_v3.mat')
 figure
 subplot(2,1,1)
 colormap(flipud(colormap(('bone'))));
@@ -212,6 +212,8 @@ set(gca,'xticklabel',num2str(floor(timeInd(floor(linspace(1,length(timeInd),10))
 tSample= 1/83.5; %(seconds);
 freqMat=[];EnergyMat=[];
 forebrainAct=forbrainAct-mean(forbrainAct,2)*ones(1,size(forbrainAct,2));
+forebrainActTemp=forbrainAct;
+forbrainAct=forbrainAct(:,1:2000);
 for i=1:size(forbrainAct,1)
     temp=forbrainAct(i,:);
     [freq,mag,power]=computeFFT(temp,tSample,'NoShowPlot');
@@ -223,7 +225,7 @@ figure;
 subplot(2,1,1)
 plot(mean(freqMat,1),mean(10*log10(EnergyMat),1),'-k')
 xlabel('Freq');ylabel('Power(db)');grid on;title('Forebrain')
-ylim([-100,-75]);xlim([-20,20]);
+ylim([-100,0]);xlim([-40,40])
 % 
 ForebrainGausEstim=ForebrainGausProcess.GaussEstimate;
 freqMat=[];EnergyMat=[];

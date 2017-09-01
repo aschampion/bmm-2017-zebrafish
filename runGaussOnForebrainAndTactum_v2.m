@@ -12,7 +12,7 @@ forbrainAct=cellAct(forbrainInd,6e3:end);
 tectumAct=cellAct(tactumInd,6e3:end);
 timeInd=[0:size(tectumAct,2)]*tSample;
 % 
-testSamples=2000;
+testSamples=20000;
 ForebrainGausProcess=GaussProcessFreq_v2(forbrainAct(:,1:testSamples),1/tSample);
 disp('forebrain done!')
 save('ForebrainGaus_v2','ForebrainGausProcess','-v7.3');
