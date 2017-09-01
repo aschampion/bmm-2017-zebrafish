@@ -29,7 +29,8 @@ smaller=(length(TimeSeries));
 wMax=ceil(size(CorrMatrixFreq,3));
 for i=1:wMax
 NormSample=randn([size(TimeSeries,1),2])*[1,j]';
-ZwSample=sqrtm(squeeze(CorrMatrixFreq(:,:,i)))*NormSample;
+NormSampleN=NormSample./norm(NormSample);
+ZwSample=sqrtm(squeeze(CorrMatrixFreq(:,:,i)))*NormSampleN;
 Zw=[Zw,ZwSample];
 end
 

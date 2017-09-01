@@ -12,10 +12,10 @@ forbrainAct=cellAct(forbrainInd,6e3:end);
 tectumAct=cellAct(tactumInd,6e3:end);
 timeInd=[0:size(tectumAct,2)]*tSample;
 % 
-ForebrainGausProcess=GaussProcessFreq_v2(forbrainAct,1/tSample);
+testSamples=2000;
+ForebrainGausProcess=GaussProcessFreq_v2(forbrainAct(:,1:testSamples),1/tSample);
 disp('forebrain done!')
-TactumGaussProcess=GaussProcessFreq_v2(tectumAct,1/tSample);
-disp('Tactum done!')
-% 
 save('ForebrainGaus_v2','ForebrainGausProcess','-v7.3');
+TactumGaussProcess=GaussProcessFreq_v2(tectumAct(:,1:testSamples),1/tSample);
+disp('Tactum done!')
 save('TactumGaus_v2','TactumGaussProcess','-v7.3');

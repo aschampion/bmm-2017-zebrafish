@@ -27,21 +27,20 @@ end
 Zw=[];GausEstimate=[];
 smaller=(length(TimeSeries));
 wMax=ceil(size(CorrMatrixFreq,3));
-
 for i=1:wMax
 NormSample=randn([size(TimeSeries,1),2])*[1,j]';
+NormSampleN=NormSample./norm(NormSample);
 ZwSample=sqrtm(squeeze(CorrMatrixFreq(:,:,i)))*NormSample;
 Zw=[Zw,ZwSample];
 end
+
 for i=1:size(Zw,1)
 B=([Zw(i,1:N/2),conj(fliplr(Zw(i,1:N/2)))]);
 C=ifft(B,'symmetric');
 D=C(smaller/2+1:pad-smaller/2+1);
 GausEstimate=[GausEstimate;D];
 end
-
 Gauss.GaussEstimate=GausEstimate;
-Gauss.CorrMatrixFreq=CorrMatrixFreq;
 varargout{1}=Gauss;
 end
 function [out,pad,N]=CorrFreq(X,Y)
