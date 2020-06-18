@@ -5,8 +5,8 @@
 #SBATCH --job-name=GaussProcess
 #SBATCH -t 12:00:00
 #SBATCH --ntask=1
-#SBATCH -c 5
-#SBATCH --mem-per-cpu 10000
+#SBATCH -c 4
+#SBATCH --mem-per-cpu 40000
 #SBATCH --exclude node017,node018
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ehoseini@mit.edu
